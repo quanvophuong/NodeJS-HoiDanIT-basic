@@ -1,9 +1,9 @@
 const express = require('express');
-
+const { getHomepage,getSample, postCreateUser} = require('../controllers/HomeController');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.render('sample')
-})
+router.get('/',getHomepage);
+router.get('/sample',getSample);
+router.post('/create-user',postCreateUser);
 
 module.exports = router;
